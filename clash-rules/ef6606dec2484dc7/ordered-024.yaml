@@ -1,0 +1,6 @@
+# Generated from shared rules; do not edit.
+---
+payload:
+- DOMAIN,cdn.usefathom.com
+- DOMAIN-SUFFIX,anthropic.com
+- DOMAIN-SUFFIX,claude.ai

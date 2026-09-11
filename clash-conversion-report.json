@@ -1,0 +1,66 @@
+{
+  "layout": "ef6606dec2484dc7",
+  "converted_rules": 2499,
+  "rule_providers": 50,
+  "skipped_rules": [
+    {
+      "rule": "USER-AGENT,PayPal*,PayPal",
+      "reason": "USER-AGENT is not supported by Mihomo routing"
+    },
+    {
+      "rule": "USER-AGENT,TikTok*,TikTok",
+      "reason": "USER-AGENT is not supported by Mihomo routing"
+    },
+    {
+      "rule": "USER-AGENT,*YouTubeMusic*,YouTube",
+      "reason": "USER-AGENT is not supported by Mihomo routing"
+    },
+    {
+      "rule": "USER-AGENT,*com.google.ios.youtubemusic*,YouTube",
+      "reason": "USER-AGENT is not supported by Mihomo routing"
+    },
+    {
+      "rule": "USER-AGENT,*youtube*,YouTube",
+      "reason": "USER-AGENT is not supported by Mihomo routing"
+    },
+    {
+      "rule": "USER-AGENT,YouTube*,YouTube",
+      "reason": "USER-AGENT is not supported by Mihomo routing"
+    },
+    {
+      "rule": "USER-AGENT,YouTubeMusic*,YouTube",
+      "reason": "USER-AGENT is not supported by Mihomo routing"
+    },
+    {
+      "rule": "USER-AGENT,com.google.ios.youtube*,YouTube",
+      "reason": "USER-AGENT is not supported by Mihomo routing"
+    },
+    {
+      "rule": "USER-AGENT,com.google.ios.youtubemusic*,YouTube",
+      "reason": "USER-AGENT is not supported by Mihomo routing"
+    },
+    {
+      "rule": "USER-AGENT,%E4%BA%91%E7%AB%AF%E7%A1%AC%E7%9B%98*,Google",
+      "reason": "USER-AGENT is not supported by Mihomo routing"
+    },
+    {
+      "rule": "USER-AGENT,*com.google.Drive*,Google",
+      "reason": "USER-AGENT is not supported by Mihomo routing"
+    },
+    {
+      "rule": "USER-AGENT,Google.Drive*,Google",
+      "reason": "USER-AGENT is not supported by Mihomo routing"
+    },
+    {
+      "rule": "USER-AGENT,Line*,PROXY",
+      "reason": "USER-AGENT is not supported by Mihomo routing"
+    }
+  ],
+  "notes": [
+    "Source order and policies preserved; IPv6 CIDR converted to IP-CIDR6.",
+    "US-STATIC-IP defaults to REJECT. Select the purchased static node locally.",
+    "macOS PROCESS-NAME rules are retained but do not identify Android apps.",
+    "General, Host, URL Rewrite and MITM are not translated; Clash uses its own base settings.",
+    "Policy group or chunk layout changes require profile migration; old layouts remain published."
+  ]
+}

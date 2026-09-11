@@ -1,56 +1,627 @@
+# Generated from shared rules; do not edit.
+---
 mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
 ipv6: false
-
+profile:
+  store-selected: true
 dns:
   enable: true
   enhanced-mode: fake-ip
   nameserver:
-    - https://223.5.5.5/dns-query
-    - https://doh.pub/dns-query
-
+  - https://223.5.5.5/dns-query
+  - https://doh.pub/dns-query
 proxy-providers:
   airport:
     type: http
-    url: "YOUR_AIRPORT_SUBSCRIPTION_URL"
-    path: ./proxy_providers/airport.yaml
+    url: YOUR_AIRPORT_SUBSCRIPTION_URL
+    path: "./proxy_providers/airport.yaml"
     interval: 86400
     health-check:
       enable: true
       url: https://www.gstatic.com/generate_204
       interval: 300
-
 proxy-groups:
-  - name: PROXY
-    type: select
-    use:
-      - airport
-    proxies:
-      - DIRECT
-
-# Keep this profile local after replacing the airport URL once.
-# Only the remote providers need refreshing for routine rule changes.
+- name: PROXY
+  type: select
+  use:
+  - airport
+- name: US-STATIC-IP
+  type: select
+  proxies:
+  - REJECT
+  use:
+  - airport
+- name: PayPal
+  type: select
+  proxies:
+  - US-STATIC-IP
+  - PROXY
+  - DIRECT
+- name: TikTok
+  type: select
+  proxies:
+  - US-STATIC-IP
+  - PROXY
+  - DIRECT
+- name: Instagram
+  type: select
+  proxies:
+  - US-STATIC-IP
+  - PROXY
+  - DIRECT
+- name: Facebook
+  type: select
+  proxies:
+  - US-STATIC-IP
+  - PROXY
+  - DIRECT
+- name: Twitter
+  type: select
+  proxies:
+  - US-STATIC-IP
+  - PROXY
+  - DIRECT
+- name: Telegram
+  type: select
+  proxies:
+  - US-STATIC-IP
+  - PROXY
+  - DIRECT
+- name: WhatsApp
+  type: select
+  proxies:
+  - US-STATIC-IP
+  - PROXY
+  - DIRECT
+- name: OpenAI
+  type: select
+  proxies:
+  - US-STATIC-IP
+  - PROXY
+  - DIRECT
+- name: Claude
+  type: select
+  proxies:
+  - US-STATIC-IP
+  - PROXY
+  - DIRECT
+- name: Anthropic
+  type: select
+  proxies:
+  - US-STATIC-IP
+  - PROXY
+  - DIRECT
+- name: Gemini
+  type: select
+  proxies:
+  - US-STATIC-IP
+  - PROXY
+  - DIRECT
+- name: BardAI
+  type: select
+  proxies:
+  - US-STATIC-IP
+  - PROXY
+  - DIRECT
+- name: Figma
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - US-STATIC-IP
+- name: FigmaMCP
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - US-STATIC-IP
+- name: Gitee
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - US-STATIC-IP
+- name: GitHub
+  type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - US-STATIC-IP
+- name: ToDesk
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - US-STATIC-IP
+- name: YouTube
+  type: select
+  proxies:
+  - PROXY
+  - US-STATIC-IP
+  - DIRECT
+- name: Google
+  type: select
+  proxies:
+  - PROXY
+  - US-STATIC-IP
+  - DIRECT
+- name: AICodeMirror
+  type: select
+  proxies:
+  - PROXY
+  - US-STATIC-IP
+  - DIRECT
+- name: AicodemirrorCN
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - US-STATIC-IP
+- name: Amux
+  type: select
+  proxies:
+  - DIRECT
+  - PROXY
+  - US-STATIC-IP
+- name: AmuxUS
+  type: select
+  proxies:
+  - US-STATIC-IP
+  - PROXY
+  - DIRECT
 rule-providers:
-  custom-direct:
+  ordered-001:
     type: http
     behavior: classical
     format: yaml
-    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-direct-rules.yaml
-    path: ./ruleset/custom-direct.yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-001.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-001.yaml"
     interval: 21600
     proxy: PROXY
-  custom-proxy:
+  ordered-002:
     type: http
     behavior: classical
     format: yaml
-    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-proxy-rules.yaml
-    path: ./ruleset/custom-proxy.yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-002.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-002.yaml"
     interval: 21600
     proxy: PROXY
-
+  ordered-003:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-003.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-003.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-004:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-004.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-004.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-005:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-005.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-005.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-006:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-006.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-006.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-007:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-007.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-007.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-008:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-008.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-008.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-009:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-009.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-009.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-010:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-010.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-010.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-011:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-011.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-011.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-012:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-012.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-012.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-013:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-013.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-013.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-014:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-014.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-014.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-015:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-015.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-015.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-016:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-016.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-016.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-017:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-017.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-017.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-018:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-018.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-018.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-019:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-019.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-019.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-020:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-020.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-020.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-021:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-021.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-021.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-022:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-022.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-022.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-023:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-023.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-023.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-024:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-024.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-024.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-025:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-025.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-025.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-026:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-026.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-026.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-027:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-027.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-027.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-028:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-028.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-028.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-029:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-029.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-029.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-030:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-030.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-030.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-031:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-031.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-031.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-032:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-032.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-032.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-033:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-033.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-033.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-034:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-034.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-034.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-035:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-035.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-035.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-036:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-036.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-036.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-037:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-037.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-037.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-038:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-038.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-038.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-039:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-039.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-039.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-040:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-040.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-040.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-041:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-041.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-041.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-042:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-042.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-042.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-043:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-043.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-043.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-044:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-044.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-044.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-045:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-045.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-045.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-046:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-046.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-046.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-047:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-047.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-047.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-048:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-048.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-048.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-049:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-049.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-049.yaml"
+    interval: 21600
+    proxy: PROXY
+  ordered-050:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-rules/ef6606dec2484dc7/ordered-050.yaml
+    path: "./ruleset/ef6606dec2484dc7/ordered-050.yaml"
+    interval: 21600
+    proxy: PROXY
 rules:
-  - RULE-SET,custom-direct,DIRECT
-  - RULE-SET,custom-proxy,PROXY
-  - MATCH,PROXY
+- RULE-SET,ordered-001,PROXY
+- RULE-SET,ordered-002,DIRECT
+- RULE-SET,ordered-003,FigmaMCP
+- RULE-SET,ordered-004,ToDesk
+- RULE-SET,ordered-005,AICodeMirror
+- RULE-SET,ordered-006,AicodemirrorCN
+- RULE-SET,ordered-007,Amux
+- RULE-SET,ordered-008,AmuxUS
+- RULE-SET,ordered-009,DIRECT
+- RULE-SET,ordered-010,US-STATIC-IP
+- RULE-SET,ordered-011,DIRECT
+- RULE-SET,ordered-012,PROXY
+- RULE-SET,ordered-013,GitHub
+- RULE-SET,ordered-014,Figma
+- RULE-SET,ordered-015,Gitee
+- RULE-SET,ordered-016,PayPal
+- RULE-SET,ordered-017,TikTok
+- RULE-SET,ordered-018,Instagram
+- RULE-SET,ordered-019,Facebook
+- RULE-SET,ordered-020,Twitter
+- RULE-SET,ordered-021,Telegram
+- RULE-SET,ordered-022,WhatsApp
+- RULE-SET,ordered-023,OpenAI
+- RULE-SET,ordered-024,Claude
+- RULE-SET,ordered-025,Anthropic
+- RULE-SET,ordered-026,Gemini
+- RULE-SET,ordered-027,BardAI
+- RULE-SET,ordered-028,YouTube
+- RULE-SET,ordered-029,Google
+- RULE-SET,ordered-030,DIRECT
+- RULE-SET,ordered-031,PROXY
+- RULE-SET,ordered-032,DIRECT
+- RULE-SET,ordered-033,PROXY
+- RULE-SET,ordered-034,DIRECT
+- RULE-SET,ordered-035,PROXY
+- RULE-SET,ordered-036,DIRECT
+- RULE-SET,ordered-037,PROXY
+- RULE-SET,ordered-038,DIRECT
+- RULE-SET,ordered-039,PROXY
+- RULE-SET,ordered-040,DIRECT
+- RULE-SET,ordered-041,PROXY
+- RULE-SET,ordered-042,DIRECT
+- RULE-SET,ordered-043,PROXY
+- RULE-SET,ordered-044,DIRECT
+- RULE-SET,ordered-045,PROXY
+- RULE-SET,ordered-046,DIRECT
+- RULE-SET,ordered-047,PROXY
+- RULE-SET,ordered-048,DIRECT
+- RULE-SET,ordered-049,PROXY
+- RULE-SET,ordered-050,DIRECT
+- MATCH,PROXY
