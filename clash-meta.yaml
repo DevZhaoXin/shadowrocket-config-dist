@@ -30,11 +30,27 @@ proxy-groups:
     proxies:
       - DIRECT
 
+# Keep this profile local after replacing the airport URL once.
+# Only the remote providers need refreshing for routine rule changes.
+rule-providers:
+  custom-direct:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-direct-rules.yaml
+    path: ./ruleset/custom-direct.yaml
+    interval: 21600
+    proxy: PROXY
+  custom-proxy:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/DevZhaoXin/shadowrocket-config-dist/master/clash-proxy-rules.yaml
+    path: ./ruleset/custom-proxy.yaml
+    interval: 21600
+    proxy: PROXY
+
 rules:
-  - DOMAIN-SUFFIX,mcgrox.top,PROXY
-  - DOMAIN-SUFFIX,monond.com,DIRECT
-  - DOMAIN-SUFFIX,browserleaks.com,PROXY
-  - DOMAIN-SUFFIX,browserleaks.org,PROXY
-  - DOMAIN-SUFFIX,dnsleaktest.com,PROXY
-  - DOMAIN-SUFFIX,ipleak.net,PROXY
+  - RULE-SET,custom-direct,DIRECT
+  - RULE-SET,custom-proxy,PROXY
   - MATCH,PROXY

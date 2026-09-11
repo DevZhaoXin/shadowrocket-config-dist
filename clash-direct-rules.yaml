@@ -1,0 +1,3 @@
+# Matching rules only; the main profile assigns DIRECT.
+payload:
+  - DOMAIN-SUFFIX,monond.com
