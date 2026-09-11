@@ -1,7 +1,7 @@
 {
-  "layout": "ef6606dec2484dc7",
-  "converted_rules": 2499,
-  "rule_providers": 50,
+  "layout": "c2f954beb04b837d",
+  "converted_rules": 2505,
+  "rule_providers": 55,
   "skipped_rules": [
     {
       "rule": "USER-AGENT,PayPal*,PayPal",
@@ -56,10 +56,49 @@
       "reason": "USER-AGENT is not supported by Mihomo routing"
     }
   ],
+  "android_app_rules": [
+    {
+      "name": "PayPal",
+      "package": "com.paypal.android.p2pmobile",
+      "policy": "PayPal",
+      "source": "https://play.google.com/store/apps/details?id=com.paypal.android.p2pmobile"
+    },
+    {
+      "name": "TikTok",
+      "package": "com.zhiliaoapp.musically",
+      "policy": "TikTok",
+      "source": "https://play.google.com/store/apps/details?id=com.zhiliaoapp.musically"
+    },
+    {
+      "name": "YouTube",
+      "package": "com.google.android.youtube",
+      "policy": "YouTube",
+      "source": "https://play.google.com/store/apps/details?id=com.google.android.youtube"
+    },
+    {
+      "name": "YouTube Music",
+      "package": "com.google.android.apps.youtube.music",
+      "policy": "YouTube",
+      "source": "https://play.google.com/store/apps/details?id=com.google.android.apps.youtube.music"
+    },
+    {
+      "name": "Google Drive",
+      "package": "com.google.android.apps.docs",
+      "policy": "Google",
+      "source": "https://play.google.com/store/apps/details?id=com.google.android.apps.docs"
+    },
+    {
+      "name": "LINE",
+      "package": "jp.naver.line.android",
+      "policy": "PROXY",
+      "source": "https://play.google.com/store/apps/details?id=jp.naver.line.android"
+    }
+  ],
   "notes": [
     "Source order and policies preserved; IPv6 CIDR converted to IP-CIDR6.",
     "US-STATIC-IP defaults to REJECT. Select the purchased static node locally.",
     "macOS PROCESS-NAME rules are retained but do not identify Android apps.",
+    "Android package rules follow explicit base rules and precede service sets. They require app traffic captured by the CMFA VPN and process identification enabled. Unknown packages fall back to shared rules.",
     "General, Host, URL Rewrite and MITM are not translated; Clash uses its own base settings.",
     "Policy group or chunk layout changes require profile migration; old layouts remain published."
   ]
