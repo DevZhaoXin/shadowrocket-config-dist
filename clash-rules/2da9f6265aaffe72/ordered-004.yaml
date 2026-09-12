@@ -1,0 +1,12 @@
+# Generated from shared rules; do not edit.
+---
+payload:
+- PROCESS-NAME,ToDesk
+- PROCESS-NAME,ToDesk_Service
+- PROCESS-NAME,ToDesk_Session_Proxy
+- PROCESS-NAME,ToDesk_XPCHelper
+- PROCESS-NAME,ToDesk_Session
+- PROCESS-NAME,ToDesk_Screenwall_Helper
+- DOMAIN-SUFFIX,todesk.com
+- DOMAIN-SUFFIX,todeskai.com
+- DOMAIN-KEYWORD,todesk
