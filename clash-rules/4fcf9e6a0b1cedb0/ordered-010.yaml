@@ -1,0 +1,5 @@
+# Generated from shared rules; do not edit.
+---
+payload:
+- DOMAIN,api.pptoken.cc
+- DOMAIN,cn.pptoken.cc

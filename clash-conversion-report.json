@@ -1,7 +1,7 @@
 {
-  "layout": "c2f954beb04b837d",
-  "converted_rules": 2505,
-  "rule_providers": 55,
+  "layout": "4fcf9e6a0b1cedb0",
+  "converted_rules": 2507,
+  "rule_providers": 56,
   "skipped_rules": [
     {
       "rule": "USER-AGENT,PayPal*,PayPal",

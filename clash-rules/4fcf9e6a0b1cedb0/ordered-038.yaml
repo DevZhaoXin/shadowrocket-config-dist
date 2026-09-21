@@ -1,0 +1,10 @@
+# Generated from shared rules; do not edit.
+---
+payload:
+- DOMAIN-SUFFIX,baidu.com
+- DOMAIN-SUFFIX,baidubcr.com
+- DOMAIN-SUFFIX,bdstatic.com
+- DOMAIN-SUFFIX,yunjiasu-cdn.net
+- DOMAIN-SUFFIX,taobao.com
+- DOMAIN-SUFFIX,alicdn.com
+- DOMAIN,blzddist1-a.akamaihd.net
