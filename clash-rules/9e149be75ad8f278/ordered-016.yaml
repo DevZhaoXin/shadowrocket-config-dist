@@ -1,0 +1,5 @@
+# Generated from shared rules; do not edit.
+---
+payload:
+- PROCESS-NAME,com.google.android.youtube
+- PROCESS-NAME,com.google.android.apps.youtube.music
