@@ -2,5 +2,6 @@
 ---
 payload:
 - DOMAIN-SUFFIX,monond.com
+- DOMAIN-SUFFIX,92ai.asia
 - DOMAIN-SUFFIX,deepseek.com
 - DOMAIN,api.zmoapi.cn
