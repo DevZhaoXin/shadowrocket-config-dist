@@ -1,0 +1,8 @@
+# Generated from shared rules; do not edit.
+---
+payload:
+- DOMAIN-SUFFIX,aicloudroute.com
+- IP-CIDR,17.0.0.0/8,no-resolve
+- IP-CIDR6,2620:149::/32,no-resolve
+- IP-CIDR6,2403:300::/32,no-resolve
+- IP-CIDR6,2A01:B740::/32,no-resolve

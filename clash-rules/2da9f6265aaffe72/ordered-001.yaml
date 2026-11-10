@@ -1,4 +1,3 @@
-# Generated from shared rules; do not edit.
+# Generated from shared rules; legacy profile compatibility.
 ---
-payload:
-- DOMAIN-SUFFIX,mcgrox.top
+payload: []

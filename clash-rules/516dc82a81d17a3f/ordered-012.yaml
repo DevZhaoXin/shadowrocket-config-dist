@@ -1,0 +1,7 @@
+# Generated from shared rules; do not edit.
+---
+payload:
+- DOMAIN-SUFFIX,browserleaks.com
+- DOMAIN-SUFFIX,browserleaks.org
+- DOMAIN-SUFFIX,dnsleaktest.com
+- DOMAIN-SUFFIX,ipleak.net

@@ -1,6 +1,7 @@
-# Generated from shared rules; do not edit.
+# Generated from shared rules; legacy profile compatibility.
 ---
 payload:
+- DOMAIN-SUFFIX,mcgrox.top
 - DOMAIN-SUFFIX,monond.com
 - DOMAIN-SUFFIX,92ai.asia
 - DOMAIN-SUFFIX,deepseek.com

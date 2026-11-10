@@ -1,6 +1,5 @@
 # Matching rules only; the main profile assigns PROXY.
 payload:
-  - DOMAIN-SUFFIX,mcgrox.top
   - DOMAIN-SUFFIX,browserleaks.com
   - DOMAIN-SUFFIX,browserleaks.org
   - DOMAIN-SUFFIX,dnsleaktest.com
